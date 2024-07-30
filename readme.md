@@ -11,8 +11,8 @@ localhost:8000/api/empleados/
 Setup del proyecto
 
 clonar repositorio de git
-git clone https://github.com/Chaya01/TecnicaLata.git
-cd "TecnicaLata"
+git clone https://github.com/Chaya01/TecnicaSimpli.git
+cd "TecnicaSimpli"
 
 crear entorno virtual
 python -m venv "nombreDirectorio"

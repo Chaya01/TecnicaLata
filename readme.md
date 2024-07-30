@@ -4,6 +4,10 @@ Esta aplicacion muestra la informacion de los empleados y de la empresa a la que
 El proyecto fue desarrollado con Python 3.9.5, Django 4.2.14, Angular 18.1.1
 Django esta configurado para conectarse a un servidor Mysql a traves de localhost.
 
+Los endpoint del servidor django son:
+
+localhost:8000/api/empresas/
+localhost:8000/api/empleados/
 Setup del proyecto
 
 clonar repositorio de git

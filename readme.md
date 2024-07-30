@@ -12,7 +12,7 @@ Setup del proyecto
 
 clonar repositorio de git
 git clone https://github.com/Chaya01/TecnicaLata.git
-cd "repositorio"
+cd "TecnicaLata"
 
 crear entorno virtual
 python -m venv "nombreDirectorio"
@@ -21,7 +21,7 @@ cd Scripts
 
 python venv
 instalar dependencias
-pip install requirements.txt
+pip install -r requirements.txt
 
 migrar base de datos
 python manage.py migrate

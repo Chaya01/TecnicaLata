@@ -1,0 +1,68 @@
+<div class="container mt-4">
+    <div class="card mb-4">
+      <div class="card-header">
+        <h2>Empleados</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="addEmpleado()">
+          <div class="form-group">
+            <label for="nombre_empleado">Nombre</label>
+            <input type="text" id="nombre_empleado" class="form-control" [(ngModel)]="newEmpleado.nombre_empleado" name="nombre_empleado" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido_empleado">Apellido</label>
+            <input type="text" id="apellido_empleado" class="form-control" [(ngModel)]="newEmpleado.apellido_empleado" name="apellido_empleado" required>
+          </div>
+          <div class="form-group">
+            <label for="rut_empleado">RUT</label>
+            <input type="text" id="rut_empleado" class="form-control" [(ngModel)]="newEmpleado.rut_empleado" name="rut_empleado" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" [(ngModel)]="newEmpleado.email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa_id">Empresa</label>
+            <select id="empresa_id" class="form-control" [(ngModel)]="newEmpleado.empresa_id" name="empresa_id" required>
+              <option *ngFor="let empresa of empresas" [value]="empresa.id">{{ empresa.nombre_empresa }}</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">{{ editEmpleadoData ? 'Update' : 'Añadir' }} Empleado</button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="card">
+      <div class="card-header">
+        <h3>Lista de Empleados</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>RUT</th>
+              <th>Email</th>
+              <th>Empresa</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empleado of empleados">
+              <td>{{ empleado.nombre_empleado }}</td>
+              <td>{{ empleado.apellido_empleado }}</td>
+              <td>{{ empleado.rut_empleado }}</td>
+              <td>{{ empleado.email }}</td>
+              <td>{{ empleado.empresa.nombre_empresa }}</td>
+              <td>
+                <button class="btn btn-sm btn-warning" (click)="editEmpleado(empleado)">Editar</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteEmpleado(empleado.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

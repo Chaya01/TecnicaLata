@@ -1,0 +1,62 @@
+<div class="container mt-4">
+    <!-- Card for Form -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h2>Empresas</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="addEmpresa()">
+          <div class="form-group">
+            <label for="nombre_empresa">Nombre</label>
+            <input type="text" id="nombre_empresa" class="form-control" [(ngModel)]="newEmpresa.nombre_empresa" name="nombre_empresa" required>
+          </div>
+          <div class="form-group">
+            <label for="rut_empresa">RUT</label>
+            <input type="text" id="rut_empresa" class="form-control" [(ngModel)]="newEmpresa.rut_empresa" name="rut_empresa" required>
+          </div>
+          <div class="form-group">
+            <label for="direccion_empresa">Direccion</label>
+            <input type="text" id="direccion_empresa" class="form-control" [(ngModel)]="newEmpresa.direccion_empresa" name="direccion_empresa" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono_empresa">Telefono</label>
+            <input type="text" id="telefono_empresa" class="form-control" [(ngModel)]="newEmpresa.telefono_empresa" name="telefono_empresa" required>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">{{ editEmpresaData ? 'Actualizar' : 'Añadir' }} Empresa</button>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Card for Table -->
+    <div class="card">
+      <div class="card-header">
+        <h3>Lista de Empresas</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>RUT</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empresa of empresas">
+              <td>{{ empresa.nombre_empresa }}</td>
+              <td>{{ empresa.rut_empresa }}</td>
+              <td>{{ empresa.direccion_empresa }}</td>
+              <td>{{ empresa.telefono_empresa }}</td>
+              <td>
+                <button class="btn btn-sm btn-warning" (click)="editEmpresa(empresa)">Editar</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteEmpresa(empresa.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
